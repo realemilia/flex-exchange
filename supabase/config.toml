@@ -1,0 +1,4 @@
+project_id = "ngjayeuwyxsvyavuwork"
+
+[functions.fixedfloat-proxy]
+verify_jwt = false

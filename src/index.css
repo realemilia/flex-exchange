@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 15% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 12% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 12% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 265 90% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 16%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 330 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 265 90% 65%;
+
+    --radius: 0.75rem;
+
+    --glass-bg: 240 12% 10%;
+    --glass-border: 240 10% 22%;
+    --glow-primary: 265 90% 65%;
+    --glow-accent: 330 85% 60%;
+    --glow-secondary: 220 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-glass-border rounded-2xl;
+  }
+
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-glass-border rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, 
+      hsl(265 90% 8%) 0%, 
+      hsl(240 15% 6%) 30%, 
+      hsl(220 40% 8%) 60%, 
+      hsl(330 40% 8%) 100%
+    );
+  }
+
+  .gradient-btn {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .glow {
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.4), 
+                0 0 60px -10px hsl(var(--accent) / 0.2);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 15px -3px hsl(var(--primary) / 0.3);
+  }
+}
